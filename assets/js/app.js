@@ -8,32 +8,6 @@ const announcements = await fetch('./assets/data/announcements.json').then((resp
   return response.json();
 });
 
-    const announcements = [
-      {
-        category: 'Consortium Announcements',
-        title: 'TIIS Consortium Proposed Brand Identity & Founding Charter',
-        body: [
-          'The Technology and Information Institutions Consortium (TIIS Consortium) has been proposed as an international academic network connecting faculties, schools, and departments in Computing and Information Technology.',
-          'During the current Founding Initiative stage, the proposed brand identity (tiis-consortium.org) and governance framework are being reviewed by prospective founding academic units prior to formal charter ratification.'
-        ]
-      },
-      {
-        category: 'Academic Events',
-        title: 'Building Collaborative Momentum Across EIDT 2025–2027 & SIMC 2026',
-        body: [
-          'Joint academic conference collaborations among Ho Chi Minh City Open University (HCMCOU), Posts and Telecommunications Institute of Technology (PTIT), Ho Chi Minh City University of Banking (HUB), and International University – VNUHCM (IU–VNUHCM) demonstrated the value of sustained inter-institutional engagement.',
-          'While EIDT and SIMC operate as independent scientific conference series, TIIS Consortium provides an ongoing academic network supporting collaboration throughout the year.'
-        ]
-      },
-      {
-        category: 'International Collaboration',
-        title: 'Invitation for Institutional Expressions of Interest',
-        body: [
-          'Higher education institutions, computing faculties, and research institutes worldwide are invited to submit a preliminary Expression of Interest via the Membership page.',
-          'Participating academic units collaborate on leadership dialogues, joint research groups, faculty and student exchange, and co-organized workshops.'
-        ]
-      }
-    ];
 
     function navigateTo(pageId, targetId = null) {
       if (!pages.includes(pageId)) pageId = 'home';
