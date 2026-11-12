@@ -7,7 +7,8 @@ const CONFIG = {
 function doGet() {
   return HtmlService.createHtmlOutputFromFile('Bridge')
     .setTitle('TIIS Form Service')
-    .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
 function processSubmission(payload) {
