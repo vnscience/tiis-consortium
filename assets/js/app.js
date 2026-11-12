@@ -235,7 +235,7 @@ function closeNewsModal() {
 }
 
 // Set this to the deployed Google Apps Script Web App URL ending in /exec.
-const TIIS_APPS_SCRIPT_URL = '';
+const TIIS_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOFCT-_Fe-R8AiGD3RogmDhRil9dFBrpWQIvW70q0DKxYRRZPorev1A7ngwIXk5DGb/exec';
 
 let tiisBridgeFrame;
 let tiisBridgeReady = false;
