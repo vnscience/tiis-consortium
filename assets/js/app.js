@@ -239,6 +239,7 @@ async function deliverForm(form, payload, subject, statusId) {
   const submit = form.querySelector('button[type="submit"]');
   if (!form.reportValidity()) return false;
   if (payload.website) return false; // Honeypot: silently reject automated spam.
+  const { website, ...submissionFields } = payload;
   submit.disabled = true;
   submit.dataset.originalText ||= submit.textContent;
   submit.textContent = 'Sending…';
@@ -248,11 +249,12 @@ async function deliverForm(form, payload, subject, statusId) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        ...payload,
+        ...submissionFields,
+        _replyto: payload.email || payload['Contact email'] || '',
         _subject: subject,
         _template: 'table',
         _captcha: 'true',
-        _honey: payload.website || ''
+        _honey: website || ''
       })
     });
     const result = await response.json();
@@ -282,8 +284,8 @@ async function submitEOI(e) {
     'Country': values.country,
     'Interest': values.category,
     'Contact person': values.contact,
-    'Contact email': values.email,
-    'website': values.website || ''
+    email: values.email,
+    website: values.website || ''
   };
   const sent = await deliverForm(form, payload, 'New TIIS membership expression of interest', 'eoi-status');
   if (!sent) return;
@@ -311,7 +313,7 @@ async function submitInquiry(e) {
     'Submission type': 'General inquiry',
     'Name': values.name,
     'Institution': values.institution,
-    'Email': values.email,
+    email: values.email,
     'Message': values.message,
     'website': values.website || ''
   };
