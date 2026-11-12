@@ -11,8 +11,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
 
-  <!-- Production CSS is generated with the Tailwind CLI during deployment. -->
-  <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  <!-- Tailwind CSS v4 browser CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy: #102A4C;
+      --color-navy-light: #1B3B66;
+      --color-royal: #1D4F87;
+      --color-royal-dark: #153D6B;
+      --color-teal: #0B6865;
+      --color-teal-dark: #084F4D;
+      --color-teal-light: #E6F7F6;
+      --color-surface: #F1F5F9;
+      --font-heading: "Manrope", sans-serif;
+      --font-body: "Inter", sans-serif;
+    }
+  </style>
   <link rel="stylesheet" href="./assets/css/site.css" />
   <link rel="icon" type="image/svg+xml" href="./assets/images/tiis-mark.svg" />
 </head>
