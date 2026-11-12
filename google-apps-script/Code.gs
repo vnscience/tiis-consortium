@@ -42,7 +42,19 @@ function processSubmission(payload) {
     const sheet = getOrCreateSheet_();
     timestamp = new Date();
     reference = (isEOI ? 'TIIS-' : 'INQ-') + Utilities.getUuid().slice(0, 8).toUpperCase();
-    const row = [timestamp, reference, type].concat(fields.map((key) => safeCell_(clean[key])));
+    const row = [
+      timestamp,
+      reference,
+      type,
+      safeCell_(clean['Institution']),
+      safeCell_(clean['Faculty / Department']),
+      safeCell_(clean['Country']),
+      safeCell_(clean['Interest']),
+      safeCell_(clean['Contact person']),
+      safeCell_(clean.email),
+      safeCell_(clean['Name']),
+      safeCell_(clean['Message'])
+    ];
     sheet.appendRow(row);
   } finally {
     lock.releaseLock();
