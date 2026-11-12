@@ -40,118 +40,230 @@
   },
   {
     "id": "eidt-2025",
-    "title": "EIDT 2025: Laying the Groundwork for Academic Exchange",
+    "title": "EIDT 2025: Launching an International Dialogue on Explainable AI and Digital Twins",
     "category": "Academic Events",
     "dateLabel": "2025 · EIDT 2025",
-    "excerpt": "Ho Chi Minh City Open University hosted EIDT 2025, creating a foundation for academic exchange among computing researchers and institutions.",
-    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
-    "imageAlt": "Placeholder visual for EIDT 2025",
+    "excerpt": "The inaugural EIDT conference welcomed more than 150 participants and featured 38 research papers on explainable AI, digital twins and intelligent applications.",
+    "coverImage": "https://ou.edu.vn/wp-content/uploads/2025/11/OUN00167-1024x682.jpg",
+    "imageAlt": "Group photograph of participants at EIDT 2025 at Ho Chi Minh City Open University",
     "featured": false,
-    "readingTime": "3 min read",
+    "readingTime": "4 min read",
     "sections": [
       {
         "type": "paragraph",
-        "text": "EIDT 2025, hosted by Ho Chi Minh City Open University (HCMCOU), was an important milestone in building connections among computing researchers and higher education institutions."
+        "text": "The First International Conference on Explainable Intelligence in Digital Twins (EIDT 2025) was held in Ho Chi Minh City from 12 to 14 November 2025. More than 150 scientists, experts, lecturers and postgraduate students from Vietnam and abroad took part. The hybrid conference was co-organized by Ho Chi Minh City Open University (HCMCOU) and Chung-Ang University, Republic of Korea."
       },
       {
         "type": "heading",
-        "text": "A meeting point for computing research"
+        "text": "A forum for explainable and trustworthy AI"
       },
       {
         "type": "paragraph",
-        "text": "The conference provided an academic setting for researchers to present their work, exchange perspectives, and connect with colleagues working across computing and information technology."
+        "text": "EIDT 2025 aimed to foster academic exchange in Explainable Artificial Intelligence (XAI), Digital Twin Systems, Computer Vision and Smart Automation—fields that are increasingly important to Industry 4.0 and digital transformation. Discussions emphasized transparency, interpretability and ethical principles in the development and deployment of AI systems."
       },
       {
         "type": "image",
-        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
-        "alt": "Placeholder image for EIDT 2025",
-        "caption": "Replace this placeholder with an official EIDT 2025 conference photograph."
-      },
-      {
-        "type": "heading",
-        "text": "A foundation for future cooperation"
+        "src": "https://ou.edu.vn/wp-content/uploads/2025/11/OUN00167-1024x682.jpg",
+        "alt": "Group photograph of EIDT 2025 delegates",
+        "caption": "Delegates at the inaugural EIDT conference. Photo: Ho Chi Minh City Open University (HCMCOU) / Minh Khánh."
       },
       {
         "type": "paragraph",
-        "text": "The relationships and conversations fostered through academic events such as EIDT 2025 helped create momentum for continued institutional engagement and future collaborative initiatives."
+        "text": "The inaugural edition featured 38 research papers. Topics included explainable machine-learning models for medical diagnosis and education, few-shot and federated learning, multimodal AI, and digital twin applications in manufacturing, transportation and healthcare. Participants also explored generative AI and large language models for smart services."
+      },
+      {
+        "type": "heading",
+        "text": "Keynotes connecting research with real-world applications"
+      },
+      {
+        "type": "paragraph",
+        "text": "Professor Fadi Dornaika of the University of the Basque Country, Spain, presented “Advancing Medical Image Analysis,” focusing on explainable deep-learning methods to improve diagnostic accuracy and transparency in AI-assisted medical systems."
+      },
+      {
+        "type": "image",
+        "src": "https://ou.edu.vn/wp-content/uploads/2025/11/OUN00080-1024x683.jpg",
+        "alt": "Professor Nguyen Minh Ha speaking at EIDT 2025",
+        "caption": "Conference opening remarks at HCMCOU. Photo: HCMCOU / Minh Khánh."
+      },
+      {
+        "type": "paragraph",
+        "text": "Professor Byung Seok Shin of Inha University, Republic of Korea, discussed “Toward Human Digital Twin Using AI Technologies,” introducing multimodal data integration for predictive models in personalized healthcare, sports, education and smart cities."
+      },
+      {
+        "type": "paragraph",
+        "text": "Associate Professor U-Xuan Tan of the Singapore University of Technology and Design shared “Healthcare Automation Innovation Journey,” highlighting AI and robotics in hospital logistics, nursing support and infection control."
+      },
+      {
+        "type": "heading",
+        "text": "A foundation for sustained international collaboration"
+      },
+      {
+        "type": "paragraph",
+        "text": "The conference provided a platform for researchers to exchange ideas on transparent and trustworthy AI while strengthening international research partnerships. Accepted and presented papers were scheduled for publication in Springer’s Lecture Notes in Electrical Engineering (LNEE) series and indexing in Scopus."
+      },
+      {
+        "type": "paragraph",
+        "text": "EIDT 2025 established the foundation for a continuing conference series and further cooperation among universities and research communities. Its focus on human-centered AI and sustainable innovation helped shape subsequent editions of EIDT."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sources: Vietnam News, “First int’l conference on explainable intelligence in digital twins held in HCM City” (12 November 2025): https://vietnamnews.vn/society/1729413/first-int-l-conference-on-explainable-intelligence-in-digital-twins-held-in-hcm-city.html | HCMCOU, conference report and photographs: https://ou.edu.vn/tin_tuc/truong-dai-hoc-mo-tp-hcm-to-chuc-hoi-nghi-quoc-te-voi-chu-de-tri-tue-kha-giai-trong-he-song-sinh-so/"
       }
     ]
   },
   {
     "id": "eidt-2026",
-    "title": "EIDT 2026: Strengthening Collaboration Through Joint Organization",
+    "title": "EIDT 2026: Advancing Explainable AI and Digital Twin Research",
     "category": "Academic Events",
     "dateLabel": "2026 · EIDT 2026",
-    "excerpt": "HCMCOU and PTIT joined forces to organize EIDT 2026 and expand opportunities for academic and research exchange.",
-    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
-    "imageAlt": "Placeholder visual for EIDT 2026",
+    "excerpt": "The second EIDT conference brought together researchers and industry experts in Hanoi, with 157 submissions, 56 accepted papers and international participation.",
+    "coverImage": "https://ptit.edu.vn/wp-content/uploads/2026/11/2aOboRBoVKO2bu0Gtq3uR86w8jsthCgiiuP5nBXk.jpg",
+    "imageAlt": "Conference delegates and speakers at EIDT 2026 at PTIT in Hanoi",
     "featured": true,
-    "readingTime": "3 min read",
+    "readingTime": "4 min read",
     "sections": [
       {
         "type": "paragraph",
-        "text": "EIDT 2026 marked a further step in institutional collaboration, with Ho Chi Minh City Open University (HCMCOU) and the Posts and Telecommunications Institute of Technology (PTIT) working together as conference co-organizers."
-      },
-      {
-        "type": "heading",
-        "text": "Collaboration in action"
+        "text": "The 2nd International Conference on Explainable Intelligence in Digital Twins (EIDT 2026) took place from 9 to 11 November 2026 at the Australia–Vietnam Strategic Technology Centre, Posts and Telecommunications Institute of Technology (PTIT), Hanoi. Ho Chi Minh City Open University (HCMCOU) served as the lead organizer, with PTIT as co-organizer. The conference received technical support from Kasetsart University, Thailand, technical sponsorship from Sejong University and Chung-Ang University, Republic of Korea, and sponsorship from Samsung."
       },
       {
         "type": "paragraph",
-        "text": "Joint organization brought together academic communities and created opportunities to share research, exchange institutional experience, and strengthen connections among computing and information technology researchers."
+        "text": "The hybrid event welcomed nearly 100 delegates, including scientists, experts, lecturers, researchers, authors and students. It provided an international forum for sharing research and strengthening interdisciplinary collaboration in explainable artificial intelligence (XAI) and digital twin technologies."
+      },
+      {
+        "type": "heading",
+        "text": "A growing international research community"
+      },
+      {
+        "type": "paragraph",
+        "text": "EIDT 2026 received 157 paper submissions involving 181 authors from Vietnam and countries including the United Kingdom, Spain, the Czech Republic, Japan, the United States and Indonesia. Following the review process, 56 papers were accepted. The figures reflect the conference’s expanding international reach and its role in connecting research communities across institutions and countries."
       },
       {
         "type": "image",
-        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
-        "alt": "Placeholder image for EIDT 2026",
-        "caption": "Replace this placeholder with an official EIDT 2026 event photograph."
+        "src": "https://ptit.edu.vn/wp-content/uploads/2026/11/2aOboRBoVKO2bu0Gtq3uR86w8jsthCgiiuP5nBXk.jpg",
+        "alt": "Group photograph of conference delegates at EIDT 2026",
+        "caption": "EIDT 2026 delegates and speakers at PTIT, Hanoi. Photo: Posts and Telecommunications Institute of Technology (PTIT)."
       },
       {
         "type": "heading",
-        "text": "Beyond a single conference"
+        "text": "Building transparent and trustworthy intelligent systems"
       },
       {
         "type": "paragraph",
-        "text": "The partnership illustrates how academic events can support longer-term relationships between institutions and encourage further cooperation in research, education, and international engagement."
+        "text": "As AI and digital twins become increasingly relevant to manufacturing, healthcare, transportation and smart cities, explaining how intelligent systems generate predictions and decisions is essential. Combining real-time data, digital twin models and AI-based analytics creates opportunities for forecasting, predictive maintenance, optimization and decision support, while raising important questions about transparency, algorithmic bias and model reliability."
+      },
+      {
+        "type": "heading",
+        "text": "Keynotes on distributed learning and multimodal AI"
+      },
+      {
+        "type": "paragraph",
+        "text": "The keynote programme featured Professor Torsten Braun of the University of Bern, Switzerland, who discussed distributed machine learning for future mobile communication networks and emerging applications. His talk covered federated, decentralized and split learning, as well as multi-agent reinforcement learning, with applications in next-generation networks and approaches that can reduce the need to exchange raw data."
+      },
+      {
+        "type": "image",
+        "src": "https://ptit.edu.vn/wp-content/uploads/2026/11/2aOboRBoVIvRijqxfNsoIqacDjonoVwz9X4WnGGe.jpg",
+        "alt": "Professor Torsten Braun delivering a keynote at EIDT 2026",
+        "caption": "Professor Torsten Braun of the University of Bern presents his keynote. Photo: PTIT."
+      },
+      {
+        "type": "paragraph",
+        "text": "Professor Hyunjoon Moon of Sejong University, Republic of Korea, presented on vision-language models, covering model architectures, parameter-efficient adaptation and future directions. The talk explored multimodal applications such as image description, visual question answering and retrieval, alongside challenges in scalability, generalization and algorithmic bias."
+      },
+      {
+        "type": "image",
+        "src": "https://ptit.edu.vn/wp-content/uploads/2026/11/2aOboRBoVH5XrWOTRaWEkM1p5IMBnqF4JTz39eoy.jpg",
+        "alt": "Professor Hyunjoon Moon presenting at EIDT 2026",
+        "caption": "Professor Hyunjoon Moon of Sejong University delivers a keynote. Photo: PTIT."
+      },
+      {
+        "type": "heading",
+        "text": "Continuing the EIDT research and publication journey"
+      },
+      {
+        "type": "paragraph",
+        "text": "EIDT 2026 builds on the first conference in 2025, whose proceedings were published in Springer’s Lecture Notes in Electrical Engineering (LNEE) series and indexed in Scopus. Accepted papers at EIDT 2026 are to be considered for publication in the LNEE series, subject to the publisher’s requirements and applicable indexing criteria."
+      },
+      {
+        "type": "paragraph",
+        "text": "Through continued collaboration, HCMCOU and PTIT aim to expand international research connections, encourage knowledge exchange and support the development of explainable, reliable AI and digital twin applications. The conference also offered students and early-career researchers opportunities to engage with emerging research and broaden their academic networks."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sources: PTIT, “Opening of the 2nd International Conference on Explainable Intelligence in Digital Twins – EIDT 2026” (10 November 2026): https://ptit.edu.vn/khai-mac-hoi-nghi-quoc-te-lan-thu-hai-ve-tri-tue-co-kha-nang-giai-thich-trong-ban-sao-so-eidt-2026/ | Nhịp Sống Online, “Hội nghị quốc tế lần thứ hai về trí tuệ khả giải trong hệ song sinh số – EIDT 2026”: https://nhipsongonline.vn/hoi-nghi-quoc-te-lan-thu-hai-ve-tri-tue-kha-giai-trong-he-song-sinh-so-eidt-2026/"
       }
     ]
   },
   {
     "id": "simc-2026",
-    "title": "SIMC 2026: Connecting Researchers Through Semantic Intelligence",
+    "title": "SIMC 2026: Exploring Semantic Intelligence for Next-Generation AI",
     "category": "Academic Events",
     "dateLabel": "2026",
-    "excerpt": "The First International Conference on Semantic Intelligence in Massive Computing brought an international research community together in Ho Chi Minh City.",
-    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
-    "imageAlt": "Placeholder visual for SIMC 2026",
+    "excerpt": "SIMC 2026 brought together nearly 150 authors and received more than 100 submissions, with 37 research papers selected for presentation in Ho Chi Minh City.",
+    "coverImage": "https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2026/11/11/tnw-dsc00080-17943875785441877236331-1794387626432985021321.jpg",
+    "imageAlt": "Researchers and speakers at the First International Conference on Semantic Intelligence in Massive Computing",
     "featured": false,
-    "readingTime": "3 min read",
+    "readingTime": "4 min read",
     "sections": [
       {
         "type": "paragraph",
-        "text": "The First International Conference on Semantic Intelligence in Massive Computing (SIMC 2026), hosted by Ho Chi Minh City University of Banking (HUB), created a forum for researchers to share work and discuss emerging directions in semantic intelligence and massive computing."
+        "text": "The First International Conference on Semantic Intelligence in Massive Computing (SIMC 2026), hosted by Ho Chi Minh City University of Banking (HUB) on 11 November 2026, brought together scientists, experts and researchers from Vietnam and other countries to discuss emerging directions in semantic intelligence and large-scale computing."
       },
       {
         "type": "heading",
-        "text": "Research exchange across institutions"
+        "text": "Semantic intelligence in the age of AI"
       },
       {
         "type": "paragraph",
-        "text": "The conference contributed to a wider pattern of academic engagement among institutions working in computing and information technology. It offered opportunities for scholarly discussion, networking, and the exchange of research perspectives."
+        "text": "Semantic intelligence combines semantic modelling, knowledge representation, reasoning mechanisms and artificial intelligence. Rather than processing data as isolated values, systems can use meaning, context and relationships among knowledge sources to support more informed decisions. These capabilities are increasingly relevant to complex computing environments involving cloud and edge–fog computing, the Internet of Things (IoT) and large-scale data platforms."
       },
       {
         "type": "image",
-        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
-        "alt": "Placeholder image for SIMC 2026 conference",
-        "caption": "Replace this placeholder with an official SIMC 2026 conference photograph."
-      },
-      {
-        "type": "heading",
-        "text": "Continuing the conversation"
+        "src": "https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2026/11/11/2c9a2497-1794387211832633262600.jpg",
+        "alt": "HUB President Nguyen Duc Trung speaking at SIMC 2026",
+        "caption": "Professor Nguyen Duc Trung, President of HUB, speaks at SIMC 2026. Photo: HUB, published by Thanh Niên."
       },
       {
         "type": "paragraph",
-        "text": "TIIS aims to help sustain connections established through conferences and translate shared interests into further academic activities and institutional cooperation."
+        "text": "The conference highlighted the potential of semantic intelligence to improve data interpretation, connect knowledge across sources and support intelligent decision-making. Potential application areas include finance, healthcare, education and smart cities."
+      },
+      {
+        "type": "heading",
+        "text": "International perspectives across AI, robotics and computing"
+      },
+      {
+        "type": "paragraph",
+        "text": "Three invited talks connected foundational research with practical applications. Associate Professor Nguyen Phu Binh of Victoria University of Wellington, New Zealand, presented “Beyond the Molecular Graph: Structure, Scale, and Adaptation in AI for Drug Discovery,” exploring how AI models can support pharmaceutical discovery by considering molecular structure, data scale and model adaptation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Associate Professor U-Xuan Tan of the Singapore University of Technology and Design discussed “Semantic Intelligence for Robots to Collaborate and Easier Deployment,” focusing on semantic intelligence for robot collaboration and deployment in healthcare and other interdisciplinary settings."
+      },
+      {
+        "type": "paragraph",
+        "text": "Associate Professor Jaehyun Park of the University of Ulsan, Republic of Korea, presented “Heterogeneous Computing for Efficient AI at Scale,” examining how different hardware architectures and computing resources can be combined to improve performance, energy efficiency and scalability for large AI workloads."
+      },
+      {
+        "type": "image",
+        "src": "https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2026/11/11/tnw-dsc00080-17943875785441877236331-1794387626432985021321.jpg",
+        "alt": "Speakers and participants at SIMC 2026",
+        "caption": "Speakers and participants at SIMC 2026. Photo: Yến Thi / Thanh Niên."
+      },
+      {
+        "type": "heading",
+        "text": "Research contributions and international participation"
+      },
+      {
+        "type": "paragraph",
+        "text": "According to the conference organizing committee, SIMC 2026 received more than 100 research submissions from nearly 150 authors representing Vietnam, New Zealand, Singapore, the Republic of Korea, India and other countries. A total of 37 papers were selected for presentation, covering AI, data science, intelligent systems, edge computing, cybersecurity, multimodal data processing and AI applications in healthcare, finance and industry."
+      },
+      {
+        "type": "paragraph",
+        "text": "By bringing together researchers across disciplines and institutions, SIMC 2026 provided a platform for scholarly exchange and new research connections. TIIS recognizes conferences of this kind as opportunities to sustain international academic dialogue and turn shared research interests into longer-term institutional collaboration."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sources: Thanh Niên, “Trí tuệ ngữ nghĩa là gì, cơ hội ứng dụng trong lĩnh vực nào thời AI?” (11 November 2026): https://thanhnien.vn/tri-tue-ngu-nghia-la-gi-co-hoi-ung-dung-trong-linh-vuc-nao-thoi-ai-185261111160017207.htm"
       }
     ]
   },
