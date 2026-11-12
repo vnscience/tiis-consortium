@@ -1,0 +1,232 @@
+[
+  {
+    "id": "tiis-founding-initiative",
+    "title": "Introducing the TIIS Consortium Founding Initiative",
+    "category": "Consortium Announcements",
+    "dateLabel": "Founding Initiative",
+    "excerpt": "An introduction to the vision of a connected international network for computing and information technology institutions.",
+    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
+    "imageAlt": "Abstract illustration representing international academic collaboration",
+    "featured": true,
+    "readingTime": "3 min read",
+    "sections": [
+      {
+        "type": "paragraph",
+        "text": "The Technology and Information Institutions Consortium (TIIS Consortium) is being developed as an international academic network connecting faculties, schools, and departments in Computing and Information Technology."
+      },
+      {
+        "type": "heading",
+        "text": "A platform for sustained cooperation"
+      },
+      {
+        "type": "paragraph",
+        "text": "The initiative aims to create practical opportunities for institutional dialogue, joint research, academic exchange, workshops, and collaboration in international scientific events."
+      },
+      {
+        "type": "image",
+        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
+        "alt": "Placeholder visual for the TIIS Consortium network",
+        "caption": "A shared platform for institutions to connect, exchange knowledge, and develop collaborations."
+      },
+      {
+        "type": "heading",
+        "text": "From connections to collaborative action"
+      },
+      {
+        "type": "paragraph",
+        "text": "The founding initiative invites interested academic units to contribute ideas, identify shared priorities, and help shape a sustainable framework for cooperation."
+      }
+    ]
+  },
+  {
+    "id": "eidt-2025",
+    "title": "EIDT 2025: Laying the Groundwork for Academic Exchange",
+    "category": "Academic Events",
+    "dateLabel": "2025 · EIDT 2025",
+    "excerpt": "Ho Chi Minh City Open University hosted EIDT 2025, creating a foundation for academic exchange among computing researchers and institutions.",
+    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
+    "imageAlt": "Placeholder visual for EIDT 2025",
+    "featured": false,
+    "readingTime": "3 min read",
+    "sections": [
+      {
+        "type": "paragraph",
+        "text": "EIDT 2025, hosted by Ho Chi Minh City Open University (HCMCOU), was an important milestone in building connections among computing researchers and higher education institutions."
+      },
+      {
+        "type": "heading",
+        "text": "A meeting point for computing research"
+      },
+      {
+        "type": "paragraph",
+        "text": "The conference provided an academic setting for researchers to present their work, exchange perspectives, and connect with colleagues working across computing and information technology."
+      },
+      {
+        "type": "image",
+        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
+        "alt": "Placeholder image for EIDT 2025",
+        "caption": "Replace this placeholder with an official EIDT 2025 conference photograph."
+      },
+      {
+        "type": "heading",
+        "text": "A foundation for future cooperation"
+      },
+      {
+        "type": "paragraph",
+        "text": "The relationships and conversations fostered through academic events such as EIDT 2025 helped create momentum for continued institutional engagement and future collaborative initiatives."
+      }
+    ]
+  },
+  {
+    "id": "eidt-2026",
+    "title": "EIDT 2026: Strengthening Collaboration Through Joint Organization",
+    "category": "Academic Events",
+    "dateLabel": "2026 · EIDT 2026",
+    "excerpt": "HCMCOU and PTIT joined forces to organize EIDT 2026 and expand opportunities for academic and research exchange.",
+    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
+    "imageAlt": "Placeholder visual for EIDT 2026",
+    "featured": true,
+    "readingTime": "3 min read",
+    "sections": [
+      {
+        "type": "paragraph",
+        "text": "EIDT 2026 marked a further step in institutional collaboration, with Ho Chi Minh City Open University (HCMCOU) and the Posts and Telecommunications Institute of Technology (PTIT) working together as conference co-organizers."
+      },
+      {
+        "type": "heading",
+        "text": "Collaboration in action"
+      },
+      {
+        "type": "paragraph",
+        "text": "Joint organization brought together academic communities and created opportunities to share research, exchange institutional experience, and strengthen connections among computing and information technology researchers."
+      },
+      {
+        "type": "image",
+        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
+        "alt": "Placeholder image for EIDT 2026",
+        "caption": "Replace this placeholder with an official EIDT 2026 event photograph."
+      },
+      {
+        "type": "heading",
+        "text": "Beyond a single conference"
+      },
+      {
+        "type": "paragraph",
+        "text": "The partnership illustrates how academic events can support longer-term relationships between institutions and encourage further cooperation in research, education, and international engagement."
+      }
+    ]
+  },
+  {
+    "id": "simc-2026",
+    "title": "SIMC 2026: Connecting Researchers Through Semantic Intelligence",
+    "category": "Academic Events",
+    "dateLabel": "2026",
+    "excerpt": "The First International Conference on Semantic Intelligence in Massive Computing brought an international research community together in Ho Chi Minh City.",
+    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
+    "imageAlt": "Placeholder visual for SIMC 2026",
+    "featured": false,
+    "readingTime": "3 min read",
+    "sections": [
+      {
+        "type": "paragraph",
+        "text": "The First International Conference on Semantic Intelligence in Massive Computing (SIMC 2026), hosted by Ho Chi Minh City University of Banking (HUB), created a forum for researchers to share work and discuss emerging directions in semantic intelligence and massive computing."
+      },
+      {
+        "type": "heading",
+        "text": "Research exchange across institutions"
+      },
+      {
+        "type": "paragraph",
+        "text": "The conference contributed to a wider pattern of academic engagement among institutions working in computing and information technology. It offered opportunities for scholarly discussion, networking, and the exchange of research perspectives."
+      },
+      {
+        "type": "image",
+        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
+        "alt": "Placeholder image for SIMC 2026 conference",
+        "caption": "Replace this placeholder with an official SIMC 2026 conference photograph."
+      },
+      {
+        "type": "heading",
+        "text": "Continuing the conversation"
+      },
+      {
+        "type": "paragraph",
+        "text": "TIIS aims to help sustain connections established through conferences and translate shared interests into further academic activities and institutional cooperation."
+      }
+    ]
+  },
+  {
+    "id": "eidt-2027",
+    "title": "EIDT 2027: Continuing the Partnership with IU–VNUHCM",
+    "category": "Academic Events",
+    "dateLabel": "2027 · Upcoming collaboration",
+    "excerpt": "HCMCOU and International University – VNUHCM are preparing the next collaborative chapter of the EIDT conference series.",
+    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
+    "imageAlt": "Placeholder visual for the planned EIDT 2027 collaboration",
+    "featured": false,
+    "readingTime": "2 min read",
+    "sections": [
+      {
+        "type": "paragraph",
+        "text": "The EIDT 2027 collaboration is planned between Ho Chi Minh City Open University (HCMCOU) and International University – Vietnam National University Ho Chi Minh City (IU–VNUHCM)."
+      },
+      {
+        "type": "heading",
+        "text": "Building on a growing academic network"
+      },
+      {
+        "type": "paragraph",
+        "text": "The planned partnership continues the conference series' emphasis on academic exchange and institutional cooperation in computing and information technology."
+      },
+      {
+        "type": "image",
+        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
+        "alt": "Placeholder image for EIDT 2027",
+        "caption": "Replace this placeholder with official event branding or a host-institution photograph when available."
+      },
+      {
+        "type": "heading",
+        "text": "Event information"
+      },
+      {
+        "type": "paragraph",
+        "text": "Further details, including the program and participation information, can be added here when they are formally announced."
+      }
+    ]
+  },
+  {
+    "id": "institutional-dialogue",
+    "title": "Institutional Dialogue: Turning Introductions into Shared Priorities",
+    "category": "International Collaboration",
+    "dateLabel": "Ongoing Activity",
+    "excerpt": "Regular online and in-person conversations help member institutions identify practical opportunities for cooperation.",
+    "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
+    "imageAlt": "Placeholder visual for an institutional networking meeting",
+    "featured": false,
+    "readingTime": "2 min read",
+    "sections": [
+      {
+        "type": "paragraph",
+        "text": "Institutional dialogue is a core part of the TIIS activity model. Regular online meetings and in-person visits give representatives a space to introduce their academic units, exchange priorities, and explore areas of mutual interest."
+      },
+      {
+        "type": "heading",
+        "text": "A practical meeting format"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sessions may include institutional introductions, research presentations, discussions on computing education, and focused conversations about joint activities."
+      },
+      {
+        "type": "image",
+        "src": "./assets/images/placeholders/tiis-event-placeholder.svg",
+        "alt": "Placeholder image for an institutional meeting",
+        "caption": "Use this space for photographs from future TIIS meetings and institutional visits."
+      },
+      {
+        "type": "paragraph",
+        "text": "The format is designed to be flexible and inclusive, enabling institutions to participate according to their interests, capacity, and schedules."
+      }
+    ]
+  }
+]

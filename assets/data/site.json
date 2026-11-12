@@ -1,0 +1,44 @@
+{
+  "site": {
+    "name": "TIIS Consortium",
+    "fullName": "Technology and Information Institutions Consortium",
+    "tagline": "Connecting Institutions. Advancing Computing. Shaping the Future.",
+    "email": "info@tiis-consortium.org",
+    "url": "https://tiis-consortium.org/",
+    "status": "Founding Initiative"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "label": "Home"
+    },
+    {
+      "id": "about",
+      "label": "About"
+    },
+    {
+      "id": "membership",
+      "label": "Membership"
+    },
+    {
+      "id": "activities",
+      "label": "Activities"
+    },
+    {
+      "id": "events",
+      "label": "Events"
+    },
+    {
+      "id": "institutions",
+      "label": "Members"
+    },
+    {
+      "id": "news",
+      "label": "News"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ]
+}

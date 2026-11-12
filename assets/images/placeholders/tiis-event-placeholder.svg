@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">TIIS Consortium event image placeholder</title>
+  <desc id="desc">Abstract blue and teal illustration symbolizing academic connection and collaboration.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#102A4C"/><stop offset="1" stop-color="#2563A6"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#16A6A1" stop-opacity=".55"/><stop offset="1" stop-color="#16A6A1" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="940" cy="160" r="360" fill="url(#glow)"/>
+  <g fill="none" stroke="#8BD8D1" stroke-opacity=".5" stroke-width="3">
+    <path d="M250 440 470 250 690 420 900 210 1040 390"/>
+    <path d="M470 250 520 520 900 210M250 440 520 520 690 420 1040 390"/>
+    <circle cx="250" cy="440" r="16" fill="#16A6A1"/><circle cx="470" cy="250" r="16" fill="#16A6A1"/>
+    <circle cx="690" cy="420" r="16" fill="#16A6A1"/><circle cx="900" cy="210" r="16" fill="#16A6A1"/><circle cx="1040" cy="390" r="16" fill="#16A6A1"/>
+  </g>
+  <text x="72" y="560" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="5">TIIS CONSORTIUM</text>
+  <text x="72" y="602" fill="#C9E4F2" font-family="Arial,sans-serif" font-size="18" letter-spacing="2">EVENT IMAGE PLACEHOLDER</text>
+</svg>
