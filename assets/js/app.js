@@ -7,7 +7,15 @@ const announcements = await fetch('./assets/data/announcements.json').then((resp
   if (!response.ok) throw new Error('Unable to load announcements.');
   return response.json();
 });
-
+// Load each page as an independent HTML partial before binding page interactions.
+const pageMarkup = await Promise.all(siteConfig.pages.map(async ({ id }) => {
+  const response = await fetch(`./assets/pages/${id}.html`);
+  if (!response.ok) throw new Error(`Unable to load page template: ${id}`);
+  return response.text();
+}));
+const pageContainer = document.getElementById('page-container');
+if (!pageContainer) throw new Error('The page container is missing.');
+pageContainer.innerHTML = pageMarkup.join('\n');
 
     function navigateTo(pageId, targetId = null) {
       if (!pages.includes(pageId)) pageId = 'home';
