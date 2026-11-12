@@ -1,0 +1,12 @@
+{
+  "name": "tiis-consortium-website",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "tailwindcss -c assets/js/tailwind.config.js -i ./src/tailwind.css -o ./assets/css/tailwind.css --minify",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
