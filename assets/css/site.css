@@ -79,7 +79,6 @@ body {
 
 
 /* Accessible color system: stronger text contrast and consistent interactive states. */
-@import url('');
 :root {
   color-scheme: light;
   --tiis-navy: #102A4C;
@@ -97,9 +96,7 @@ body { color: var(--tiis-navy); background: #fff; }
 .text-slate-600 { color: #475569 !important; }
 .text-slate-500 { color: #526277 !important; }
 .bg-teal { background-color: var(--tiis-teal) !important; }
-.hover\\:bg-teal-dark:hover { background-color: var(--tiis-teal-dark) !important; }
 .bg-teal-light { background-color: var(--tiis-teal-light) !important; }
-.border-teal\\/30 { border-color: rgba(11,104,101,.3) !important; }
 .bg-navy .text-teal,
 .bg-navy .text-teal-dark { color: #8BE3D8 !important; }
 .bg-navy .text-teal-light { color: #B9F3EC !important; }
