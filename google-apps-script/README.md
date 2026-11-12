@@ -23,7 +23,7 @@ Every valid submission is validated again in Apps Script, appended to a private 
 5. Deploy and authorize the requested Google Sheets and email permissions.
 6. Copy the Web app URL ending in `/exec`.
 
-**Important:** `Code.gs` sets `HtmlService.XFrameOptionsMode.ALLOWALL` so the bridge can be embedded by `tiis-consortium.org`. Keep the bridge's origin allowlist in `Bridge.html`; do not remove its `event.origin` checks. Whenever you update `Code.gs`, deploy a **New version** (Deploy → Manage deployments → Edit → New version → Deploy) for the existing `/exec` URL to serve the fix.
+**Important:** `Code.gs` sets `HtmlService.XFrameOptionsMode.ALLOWALL` so the bridge can be embedded by the TIIS website. The bridge allowlist includes `tiis-consortium.org`, `www.tiis-consortium.org`, and `vnscience.github.io` (the GitHub Pages origin); keep the `event.origin` checks and add any future production hostname explicitly. Whenever you update `Code.gs`, deploy a **New version** (Deploy → Manage deployments → Edit → New version → Deploy) for the existing `/exec` URL to serve the fix.
 
 The first successful submission creates a spreadsheet named **TIIS Website Form Submissions** in the deploying account's Google Drive. The sheet ID is stored in Script Properties. Keep the spreadsheet private; share it only with authorized staff.
 
