@@ -1,0 +1,42 @@
+body {
+      font-family: 'Inter', sans-serif;
+      color: #102A4C;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* Instant view transition */
+    .page-view {
+      display: none;
+    }
+    .page-view.active {
+      display: block;
+      animation: fadeIn 0.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Crisp active link underline */
+    .nav-btn {
+      position: relative;
+      transition: color 0.15s ease;
+    }
+    .nav-btn.active {
+      color: #2563A6;
+      font-weight: 500;
+    }
+    .nav-btn.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 2px;
+      background-color: #16A6A1;
+      border-radius: 9999px;
+    }
