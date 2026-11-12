@@ -175,3 +175,6 @@ button, a { transition:color .16s ease, background-color .16s ease, border-color
 .offcanvas-menu { border-radius:0; }
 @media (min-width:640px) { .offcanvas-menu { border-top-left-radius:22px; border-bottom-left-radius:22px; } }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; } }
+
+/* Keep hidden drawer and backdrop out of layout until the menu is opened. */
+.offcanvas-menu[hidden], .menu-backdrop[hidden] { display:none !important; }
