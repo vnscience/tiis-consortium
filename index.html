@@ -11,11 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS -->
-  <script src="./assets/js/tailwind.config.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <!-- Production CSS is generated with the Tailwind CLI during deployment. -->
+  <link rel="stylesheet" href="./assets/css/tailwind.css" />
   <link rel="stylesheet" href="./assets/css/site.css" />
+  <link rel="icon" type="image/svg+xml" href="./assets/images/tiis-mark.svg" />
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
@@ -55,17 +54,7 @@
           </div>
         </button>
 
-        <!-- Center Concise 8-Page Navigation (Desktop) -->
-        <nav class="hidden lg:flex items-center gap-5 text-sm text-slate-600" aria-label="Primary Navigation">
-          <button type="button" data-nav="home" onclick="navigateTo('home')" class="nav-btn active py-1 hover:text-navy">Home</button>
-          <button type="button" data-nav="about" onclick="navigateTo('about')" class="nav-btn py-1 hover:text-navy">About</button>
-          <button type="button" data-nav="membership" onclick="navigateTo('membership')" class="nav-btn py-1 hover:text-navy">Membership</button>
-          <button type="button" data-nav="activities" onclick="navigateTo('activities')" class="nav-btn py-1 hover:text-navy">Activities</button>
-          <button type="button" data-nav="events" onclick="navigateTo('events')" class="nav-btn py-1 hover:text-navy">Events</button>
-          <button type="button" data-nav="institutions" onclick="navigateTo('institutions')" class="nav-btn py-1 hover:text-navy">Members</button>
-          <button type="button" data-nav="news" onclick="navigateTo('news')" class="nav-btn py-1 hover:text-navy">News</button>
-          <button type="button" data-nav="contact" onclick="navigateTo('contact')" class="nav-btn py-1 hover:text-navy">Contact</button>
-        </nav>
+        <!-- Navigation is available through the responsive off-canvas drawer. -->
 
         <!-- Right CTA + Mobile Menu Toggle -->
         <div class="flex items-center gap-2.5">
@@ -81,8 +70,8 @@
             type="button"
             id="mobile-toggle"
             onclick="toggleMobileMenu()"
-            class="lg:hidden p-2 rounded-lg border border-slate-200 text-navy hover:bg-surface focus:outline-none"
-            aria-label="Toggle Menu"
+            class="p-2 rounded-lg border border-slate-200 text-navy hover:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-royal"
+            aria-label="Open navigation menu"
             aria-expanded="false"
           >
             <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -96,28 +85,33 @@
       </div>
     </div>
 
-    <!-- Clean Mobile Menu Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200">
-      <div class="max-w-6xl mx-auto px-4 py-3 space-y-1 text-sm">
-        <button type="button" data-mnav="home" onclick="navigateTo('home')" class="block w-full text-left px-3 py-2 rounded-lg font-medium text-royal bg-surface">Home</button>
-        <button type="button" data-mnav="about" onclick="navigateTo('about')" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-surface">About</button>
-        <button type="button" data-mnav="membership" onclick="navigateTo('membership')" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-surface">Membership</button>
-        <button type="button" data-mnav="activities" onclick="navigateTo('activities')" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-surface">Activities</button>
-        <button type="button" data-mnav="events" onclick="navigateTo('events')" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-surface">Events</button>
-        <button type="button" data-mnav="institutions" onclick="navigateTo('institutions')" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-surface">Members</button>
-        <button type="button" data-mnav="news" onclick="navigateTo('news')" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-surface">News</button>
-        <button type="button" data-mnav="contact" onclick="navigateTo('contact')" class="block w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-surface">Contact</button>
-        <div class="pt-2 border-t border-slate-200">
-          <button
-            type="button"
-            onclick="navigateTo('membership', 'membership-form')"
-            class="w-full py-2.5 px-4 rounded-lg bg-royal hover:bg-royal-dark text-white font-heading font-semibold text-sm text-center"
-          >
-            Become a Member
-          </button>
+    <!-- Responsive off-canvas navigation drawer -->
+    <div id="menu-backdrop" class="menu-backdrop" hidden></div>
+    <aside id="mobile-menu" class="offcanvas-menu" role="dialog" aria-modal="true" aria-label="Main navigation" aria-hidden="true" inert>
+      <div class="offcanvas-header">
+        <div>
+          <p class="offcanvas-eyebrow">TIIS CONSORTIUM</p>
+          <h2 class="offcanvas-title">Explore the network</h2>
         </div>
+        <button type="button" id="menu-close" class="menu-close" onclick="closeMobileMenu()" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
-    </div>
+      <nav class="offcanvas-nav" aria-label="Primary navigation">
+        <button type="button" data-mnav="home" onclick="navigateTo('home')">Home <span>01</span></button>
+        <button type="button" data-mnav="about" onclick="navigateTo('about')">About <span>02</span></button>
+        <button type="button" data-mnav="membership" onclick="navigateTo('membership')">Membership <span>03</span></button>
+        <button type="button" data-mnav="activities" onclick="navigateTo('activities')">Activities <span>04</span></button>
+        <button type="button" data-mnav="events" onclick="navigateTo('events')">Events <span>05</span></button>
+        <button type="button" data-mnav="institutions" onclick="navigateTo('institutions')">Member Institutions <span>06</span></button>
+        <button type="button" data-mnav="news" onclick="navigateTo('news')">News &amp; Stories <span>07</span></button>
+        <button type="button" data-mnav="contact" onclick="navigateTo('contact')">Contact <span>08</span></button>
+      </nav>
+      <div class="offcanvas-footer">
+        <p>Connecting Institutions. Advancing Computing. Shaping the Future.</p>
+        <button type="button" onclick="navigateTo('membership', 'membership-form')" class="offcanvas-cta">Become a Member <span aria-hidden="true">→</span></button>
+      </div>
+    </aside>
   </header>
 
   <!-- ===================================================================== -->
