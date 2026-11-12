@@ -161,6 +161,16 @@ function filterNews(category) {
 
 function renderArticleBlock(block) {
   if (block.type === 'heading') return `<h2>${escapeHtml(block.text)}</h2>`;
+  if (block.type === 'paragraph' && block.text.startsWith('Sources: ')) {
+    const entries = block.text.slice(9).split(' | ').map((entry) => {
+      const separator = entry.lastIndexOf(': https://');
+      if (separator < 0) return escapeHtml(entry);
+      const label = entry.slice(0, separator);
+      const url = entry.slice(separator + 2);
+      return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
+    });
+    return `<p class="article-source"><strong>Sources:</strong> ${entries.join(' · ')}</p>`;
+  }
   if (block.type === 'image') return `
     <figure class="article-figure">
       <img src="${escapeHtml(block.src || './assets/images/placeholders/tiis-event-placeholder.svg')}" alt="${escapeHtml(block.alt || '')}" loading="lazy">
