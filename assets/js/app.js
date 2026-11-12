@@ -234,6 +234,65 @@ function closeNewsModal() {
   if (modal) modal.classList.add('hidden');
 }
 
+// Set this to the deployed Google Apps Script Web App URL ending in /exec.
+const TIIS_APPS_SCRIPT_URL = '';
+
+let tiisBridgeFrame;
+let tiisBridgeReady = false;
+let tiisBridgeQueue = [];
+const tiisPendingSubmissions = new Map();
+
+function getTIISBridge() {
+  if (!TIIS_APPS_SCRIPT_URL) throw new Error('The TIIS form service has not been configured yet.');
+  if (!tiisBridgeFrame) {
+    tiisBridgeFrame = document.createElement('iframe');
+    tiisBridgeFrame.title = 'Secure TIIS form submission service';
+    tiisBridgeFrame.setAttribute('aria-hidden', 'true');
+    tiisBridgeFrame.tabIndex = -1;
+    tiisBridgeFrame.style.cssText = 'position:absolute;width:1px;height:1px;left:-10000px;border:0;';
+    tiisBridgeFrame.onload = () => {
+      tiisBridgeReady = true;
+      tiisBridgeQueue.splice(0).forEach(({ payload, resolve, reject }) => sendToTIISBridge(payload, resolve, reject));
+    };
+    tiisBridgeFrame.src = TIIS_APPS_SCRIPT_URL;
+    document.body.appendChild(tiisBridgeFrame);
+  }
+  return tiisBridgeFrame;
+}
+
+function sendToTIISBridge(payload, resolve, reject) {
+  const requestId = crypto.randomUUID();
+  const timeout = window.setTimeout(() => {
+    tiisPendingSubmissions.delete(requestId);
+    reject(new Error('The submission service did not respond in time. Please try again.'));
+  }, 30000);
+  tiisPendingSubmissions.set(requestId, { resolve, reject, timeout });
+  tiisBridgeFrame.contentWindow.postMessage({ type: 'TIIS_SUBMIT', requestId, payload }, '*');
+}
+
+window.addEventListener('message', (event) => {
+  if (!tiisBridgeFrame || event.source !== tiisBridgeFrame.contentWindow) return;
+  if (!event.data || event.data.type !== 'TIIS_SUBMIT_RESULT') return;
+  const pending = tiisPendingSubmissions.get(event.data.requestId);
+  if (!pending) return;
+  window.clearTimeout(pending.timeout);
+  tiisPendingSubmissions.delete(event.data.requestId);
+  if (event.data.ok) pending.resolve(event.data.result);
+  else pending.reject(new Error(event.data.error || 'The submission could not be processed.'));
+});
+
+function submitToTIISBridge(payload) {
+  return new Promise((resolve, reject) => {
+    try {
+      getTIISBridge();
+      if (tiisBridgeReady) sendToTIISBridge(payload, resolve, reject);
+      else tiisBridgeQueue.push({ payload, resolve, reject });
+    } catch (error) {
+      reject(error);
+    }
+  });
+}
+
 async function deliverForm(form, payload, subject, statusId) {
   const status = document.getElementById(statusId);
   const submit = form.querySelector('button[type="submit"]');
@@ -245,26 +304,12 @@ async function deliverForm(form, payload, subject, statusId) {
   submit.textContent = 'Sending…';
   status?.classList.add('hidden');
   try {
-    const response = await fetch('https://formsubmit.co/ajax/bay.nv@ou.edu.vn', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        ...submissionFields,
-        _replyto: payload.email || payload['Contact email'] || '',
-        _subject: subject,
-        _template: 'table',
-        _captcha: 'true',
-        _honey: website || ''
-      })
-    });
-    const result = await response.json();
-    if (!response.ok || result.success !== 'true') {
-      throw new Error(result.message || 'The message could not be delivered.');
-    }
+    const result = await submitToTIISBridge({ ...submissionFields, subject });
+    form.dataset.submissionReference = result.reference;
     return true;
   } catch (error) {
     if (status) {
-      status.textContent = 'We could not send your submission. Please try again or email info@tiis-consortium.org.';
+      status.textContent = error.message || 'We could not send your submission. Please try again or email info@tiis-consortium.org.';
       status.classList.remove('hidden');
     }
     return false;
@@ -289,7 +334,7 @@ async function submitEOI(e) {
   };
   const sent = await deliverForm(form, payload, 'New TIIS membership expression of interest', 'eoi-status');
   if (!sent) return;
-  const ref = 'TIIS-' + Math.floor(10000 + Math.random() * 90000);
+  const ref = form.dataset.submissionReference || 'TIIS-' + Math.floor(10000 + Math.random() * 90000);
   document.getElementById('eoi-ref').textContent = ref;
   document.getElementById('eoi-summary').innerHTML = `
     <div><strong>Institution:</strong> ${escapeHtml(values.institution)}</div>
@@ -319,7 +364,7 @@ async function submitInquiry(e) {
   };
   const sent = await deliverForm(form, payload, 'New TIIS website inquiry', 'inquiry-status');
   if (!sent) return;
-  const ref = 'INQ-' + Math.floor(10000 + Math.random() * 90000);
+  const ref = form.dataset.submissionReference || 'INQ-' + Math.floor(10000 + Math.random() * 90000);
   document.getElementById('inq-ref').textContent = ref;
   form.classList.add('hidden');
   document.getElementById('inquiry-confirmation').classList.remove('hidden');
