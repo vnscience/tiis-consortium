@@ -39,6 +39,7 @@ function navigateTo(pageId, targetId = null) {
     btn.classList.toggle('font-medium', isCurrent);
     btn.classList.toggle('text-royal', isCurrent);
     btn.classList.toggle('bg-surface', isCurrent);
+    btn.classList.toggle('active', isCurrent);
   });
 
   closeMobileMenu();
@@ -70,6 +71,8 @@ function openMobileMenu() {
   if (!menu || !backdrop) return;
   menu.hidden = false;
   backdrop.hidden = false;
+  document.getElementById('icon-open')?.classList.add('hidden');
+  document.getElementById('icon-close')?.classList.remove('hidden');
   menu.removeAttribute('inert');
   menu.setAttribute('aria-hidden', 'false');
   requestAnimationFrame(() => {
@@ -94,6 +97,8 @@ function closeMobileMenu() {
   document.body.classList.remove('menu-open');
   toggle?.setAttribute('aria-expanded', 'false');
   toggle?.setAttribute('aria-label', 'Open navigation menu');
+  document.getElementById('icon-open')?.classList.remove('hidden');
+  document.getElementById('icon-close')?.classList.add('hidden');
   window.setTimeout(() => {
     if (!menu.classList.contains('is-open')) {
       menu.hidden = true;
@@ -277,6 +282,19 @@ Object.assign(window, {
 });
 document.getElementById('menu-backdrop')?.addEventListener('click', closeMobileMenu);
 document.addEventListener('keydown', (event) => {
+  const menu = document.getElementById('mobile-menu');
+  if (event.key === 'Tab' && menu?.classList.contains('is-open')) {
+    const focusable = [...menu.querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
+  }
   if (event.key === 'Escape') {
     closeNewsModal();
     closeMobileMenu();
