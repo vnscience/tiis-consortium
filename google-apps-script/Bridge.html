@@ -3,7 +3,11 @@
 <head><base target="_top"></head>
 <body>
 <script>
-  const ALLOWED_ORIGINS = ['https://tiis-consortium.org', 'https://www.tiis-consortium.org'];
+  const ALLOWED_ORIGINS = [
+    'https://tiis-consortium.org',
+    'https://www.tiis-consortium.org',
+    'https://vnscience.github.io'
+  ];
   window.addEventListener('message', function(event) {
     if (!ALLOWED_ORIGINS.includes(event.origin)) return;
     const data = event.data;
