@@ -12,6 +12,7 @@ The TIIS Consortium website is a modular, data-driven static website. It can be 
     ├── css/site.css
     ├── data/
     │   ├── announcements.json
+    │   └── stories.json
     │   └── site.json
     ├── js/
     │   ├── app.js
@@ -35,11 +36,14 @@ The TIIS Consortium website is a modular, data-driven static website. It can be 
 - `assets/js/tailwind.config.js`: Tailwind theme tokens and font configuration.
 - `assets/js/app.js`: page loading, navigation, mobile menu, news filtering, dialogs, and form interactions.
 - `assets/data/site.json`: site metadata and navigation configuration.
-- `assets/data/announcements.json`: editable news and announcement content.
+- `assets/data/announcements.json`: legacy announcement copy retained for reference.
+- `assets/data/stories.json`: the editorial content source for news cards and full event articles. Each story supports a category, date label, excerpt, cover image, reading time, and structured content sections (paragraphs, headings, images, and quotes).
+- `assets/images/placeholders/`: reusable local placeholder artwork. Replace image paths in `stories.json` with official event photographs when available.
 
 ## Updating content
 
-- Edit `assets/data/announcements.json` to manage news items.
+- Edit `assets/data/stories.json` to publish or update news and event stories. Give each story a unique `id`; add content blocks to its `sections` array. Supported block types are `paragraph`, `heading`, `image`, and `quote`.
+- Set `coverImage` and image-block `src` values to local image paths or approved image URLs. The local TIIS placeholder is used as a fallback.
 - Edit `assets/data/site.json` to update site metadata and navigation.
 - Edit the relevant file in `assets/pages/` to change page structure or copy.
 - Edit `assets/css/site.css` for custom styling.
