@@ -58,24 +58,49 @@ function navigateTo(pageId, targetId = null) {
 
 function toggleMobileMenu() {
   const menu = document.getElementById('mobile-menu');
-  const openIcon = document.getElementById('icon-open');
-  const closeIcon = document.getElementById('icon-close');
-  const btn = document.getElementById('mobile-toggle');
-  const hidden = menu.classList.contains('hidden');
-  menu.classList.toggle('hidden', !hidden);
-  openIcon.classList.toggle('hidden', hidden);
-  closeIcon.classList.toggle('hidden', !hidden);
-  btn.setAttribute('aria-expanded', String(hidden));
+  if (!menu) return;
+  if (menu.classList.contains('is-open')) closeMobileMenu();
+  else openMobileMenu();
+}
+
+function openMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('menu-backdrop');
+  const toggle = document.getElementById('mobile-toggle');
+  if (!menu || !backdrop) return;
+  menu.hidden = false;
+  backdrop.hidden = false;
+  menu.removeAttribute('inert');
+  menu.setAttribute('aria-hidden', 'false');
+  requestAnimationFrame(() => {
+    backdrop.classList.add('is-visible');
+    menu.classList.add('is-open');
+  });
+  document.body.classList.add('menu-open');
+  toggle?.setAttribute('aria-expanded', 'true');
+  toggle?.setAttribute('aria-label', 'Close navigation menu');
+  document.getElementById('menu-close')?.focus();
 }
 
 function closeMobileMenu() {
   const menu = document.getElementById('mobile-menu');
-  if (menu && !menu.classList.contains('hidden')) {
-    menu.classList.add('hidden');
-    document.getElementById('icon-open').classList.remove('hidden');
-    document.getElementById('icon-close').classList.add('hidden');
-    document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false');
-  }
+  const backdrop = document.getElementById('menu-backdrop');
+  const toggle = document.getElementById('mobile-toggle');
+  if (!menu || !menu.classList.contains('is-open')) return;
+  menu.classList.remove('is-open');
+  backdrop?.classList.remove('is-visible');
+  menu.setAttribute('aria-hidden', 'true');
+  menu.setAttribute('inert', '');
+  document.body.classList.remove('menu-open');
+  toggle?.setAttribute('aria-expanded', 'false');
+  toggle?.setAttribute('aria-label', 'Open navigation menu');
+  window.setTimeout(() => {
+    if (!menu.classList.contains('is-open')) {
+      menu.hidden = true;
+      if (backdrop) backdrop.hidden = true;
+    }
+  }, 300);
+  toggle?.focus();
 }
 
 function storyCard(story) {
@@ -250,6 +275,7 @@ Object.assign(window, {
   openNewsModal, closeNewsModal, submitEOI, resetEOI,
   submitInquiry, resetInquiry, copyEmail
 });
+document.getElementById('menu-backdrop')?.addEventListener('click', closeMobileMenu);
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closeNewsModal();
