@@ -234,23 +234,68 @@ function closeNewsModal() {
   if (modal) modal.classList.add('hidden');
 }
 
-function submitEOI(e) {
+async function deliverForm(form, payload, subject, statusId) {
+  const status = document.getElementById(statusId);
+  const submit = form.querySelector('button[type="submit"]');
+  if (!form.reportValidity()) return false;
+  if (payload.website) return false; // Honeypot: silently reject automated spam.
+  submit.disabled = true;
+  submit.dataset.originalText ||= submit.textContent;
+  submit.textContent = 'Sending…';
+  status?.classList.add('hidden');
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/bay.nv@ou.edu.vn', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        ...payload,
+        _subject: subject,
+        _template: 'table',
+        _captcha: 'true',
+        _honey: payload.website || ''
+      })
+    });
+    const result = await response.json();
+    if (!response.ok || result.success !== 'true') {
+      throw new Error(result.message || 'The message could not be delivered.');
+    }
+    return true;
+  } catch (error) {
+    if (status) {
+      status.textContent = 'We could not send your submission. Please try again or email info@tiis-consortium.org.';
+      status.classList.remove('hidden');
+    }
+    return false;
+  } finally {
+    submit.disabled = false;
+    submit.textContent = submit.dataset.originalText;
+  }
+}
+async function submitEOI(e) {
   e.preventDefault();
-  const inst = document.getElementById('eoi-inst').value.trim();
-  const dept = document.getElementById('eoi-dept').value.trim();
-  const country = document.getElementById('eoi-country').value.trim();
-  const category = document.getElementById('eoi-category').value;
-  const contact = document.getElementById('eoi-contact').value.trim();
-  const email = document.getElementById('eoi-email').value.trim();
+  const form = e.currentTarget;
+  const values = Object.fromEntries(new FormData(form).entries());
+  const payload = {
+    'Submission type': 'Membership expression of interest',
+    'Institution': values.institution,
+    'Faculty / Department': values.department,
+    'Country': values.country,
+    'Interest': values.category,
+    'Contact person': values.contact,
+    'Contact email': values.email,
+    'website': values.website || ''
+  };
+  const sent = await deliverForm(form, payload, 'New TIIS membership expression of interest', 'eoi-status');
+  if (!sent) return;
   const ref = 'TIIS-' + Math.floor(10000 + Math.random() * 90000);
   document.getElementById('eoi-ref').textContent = ref;
   document.getElementById('eoi-summary').innerHTML = `
-    <div><strong>Institution:</strong> ${escapeHtml(inst)}</div>
-    <div><strong>Faculty / Department:</strong> ${escapeHtml(dept)}</div>
-    <div><strong>Country:</strong> ${escapeHtml(country)}</div>
-    <div><strong>Category:</strong> ${escapeHtml(category)}</div>
-    <div><strong>Contact:</strong> ${escapeHtml(contact)} (${escapeHtml(email)})</div>`;
-  document.getElementById('eoi-form').classList.add('hidden');
+    <div><strong>Institution:</strong> ${escapeHtml(values.institution)}</div>
+    <div><strong>Faculty / Department:</strong> ${escapeHtml(values.department)}</div>
+    <div><strong>Country:</strong> ${escapeHtml(values.country)}</div>
+    <div><strong>Interest:</strong> ${escapeHtml(values.category)}</div>
+    <div><strong>Contact:</strong> ${escapeHtml(values.contact)} (${escapeHtml(values.email)})</div>`;
+  form.classList.add('hidden');
   document.getElementById('eoi-confirmation').classList.remove('hidden');
 }
 function resetEOI() {
@@ -258,11 +303,23 @@ function resetEOI() {
   document.getElementById('eoi-confirmation').classList.add('hidden');
   document.getElementById('eoi-form').classList.remove('hidden');
 }
-function submitInquiry(e) {
+async function submitInquiry(e) {
   e.preventDefault();
+  const form = e.currentTarget;
+  const values = Object.fromEntries(new FormData(form).entries());
+  const payload = {
+    'Submission type': 'General inquiry',
+    'Name': values.name,
+    'Institution': values.institution,
+    'Email': values.email,
+    'Message': values.message,
+    'website': values.website || ''
+  };
+  const sent = await deliverForm(form, payload, 'New TIIS website inquiry', 'inquiry-status');
+  if (!sent) return;
   const ref = 'INQ-' + Math.floor(10000 + Math.random() * 90000);
   document.getElementById('inq-ref').textContent = ref;
-  document.getElementById('inquiry-form').classList.add('hidden');
+  form.classList.add('hidden');
   document.getElementById('inquiry-confirmation').classList.remove('hidden');
 }
 function resetInquiry() {
