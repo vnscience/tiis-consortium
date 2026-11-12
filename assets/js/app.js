@@ -241,7 +241,7 @@ function copyEmail() {
 function escapeHtml(value) {
   const div = document.createElement('div');
   div.textContent = String(value ?? '');
-  return div.innerHTML;
+  return div.innerHTML.replace(/\"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 renderStories();
