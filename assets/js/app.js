@@ -300,8 +300,17 @@ document.addEventListener('keydown', (event) => {
     closeMobileMenu();
   }
 });
-window.addEventListener('DOMContentLoaded', () => {
+// ES modules with top-level await may resume after DOMContentLoaded has
+// already fired. Initialize the first view immediately instead of waiting
+// for that event; otherwise the page container remains empty until a user
+// clicks a navigation control.
+function initializeRoute() {
   const hash = window.location.hash.replace(/^#/, '');
-  if (hash.startsWith('article/')) openArticle(decodeURIComponent(hash.slice(8)));
-  else if (pages.includes(hash)) navigateTo(hash);
-});
+  if (hash.startsWith('article/')) {
+    openArticle(decodeURIComponent(hash.slice(8)));
+  } else {
+    navigateTo(pages.includes(hash) ? hash : 'home');
+  }
+}
+
+initializeRoute();
