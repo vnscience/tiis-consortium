@@ -4,98 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TIIS Consortium | Technology and Information Institutions Consortium</title>
-  <meta name="description" content="Technology and Information Institutions Consortium (TIIS Consortium) ,  Connecting Institutions. Advancing Computing. Shaping the Future." />
+  <meta name="description" content="Technology and Information Institutions Consortium (TIIS Consortium), connecting institutions, advancing computing, and shaping the future." />
 
   <!-- Google Fonts: Manrope (Headings 600/700) & Inter (Body 400/500) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
 
-  <!-- Production CSS is generated with the Tailwind CLI during deployment. -->
-  <link rel="stylesheet" href="./assets/css/tailwind.css" />
+  <!-- Tailwind CSS v4 browser CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-navy: #102A4C;
+      --color-navy-light: #1B3B66;
+      --color-royal: #1D4F87;
+      --color-royal-dark: #153D6B;
+      --color-teal: #0B6865;
+      --color-teal-dark: #084F4D;
+      --color-teal-light: #E6F7F6;
+      --color-surface: #F1F5F9;
+      --font-heading: "Manrope", sans-serif;
+      --font-body: "Inter", sans-serif;
+    }
+  </style>
   <link rel="stylesheet" href="./assets/css/site.css" />
   <link rel="icon" type="image/svg+xml" href="./assets/images/tiis-mark.svg" />
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-
   <!-- ===================================================================== -->
   <!-- STICKY MINIMALIST TOP NAVIGATION BAR                                  -->
   <!-- ===================================================================== -->
   <header class="sticky top-0 z-40 bg-white border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-18 gap-4">
-        <!-- Minimalist Geometric Logo + Brand Title -->
-        <button
-          type="button"
-          onclick="navigateTo('home')"
-          class="flex items-center gap-2.5 text-left focus:outline-none shrink-0"
-          aria-label="TIIS Consortium Home"
-        >
-          <!-- Clean 3-Element Geometric SVG Mark: Academic Frame + Open Book + Network Nodes -->
+        <button type="button" onclick="navigateTo('home')" class="flex items-center gap-2.5 text-left focus:outline-none shrink-0" aria-label="TIIS Consortium Home">
           <svg class="w-9 h-9 shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TIIS Logo">
-            <!-- 1. Academic Frame -->
             <rect x="2" y="2" width="36" height="36" rx="8" fill="#102A4C"/>
-            <!-- 2. Open Academic Book -->
             <path d="M10 23.5C13.5 22.5 16.8 23.2 20 25C23.2 23.2 26.5 22.5 30 23.5V29.5C26.5 28.5 23.2 29.2 20 31C16.8 29.2 13.5 28.5 10 29.5V23.5Z" fill="#FFFFFF"/>
             <path d="M20 25V31" stroke="#102A4C" stroke-width="1.4" stroke-linecap="round"/>
-            <!-- 3. Connected Network Nodes -->
             <path d="M12.5 14.5L20 11L27.5 14.5" stroke="#16A6A1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="12.5" cy="14.5" r="2.2" fill="#FFFFFF"/>
             <circle cx="20" cy="11" r="2.4" fill="#16A6A1"/>
             <circle cx="27.5" cy="14.5" r="2.2" fill="#FFFFFF"/>
           </svg>
           <div>
-            <span class="font-heading font-bold text-base sm:text-lg tracking-tight text-navy block leading-none">
-              TIIS CONSORTIUM
-            </span>
-            <span class="hidden sm:block text-[11px] text-slate-500 mt-1 leading-none">
-              International Academic Network
-            </span>
+            <span class="font-heading font-bold text-base sm:text-lg tracking-tight text-navy block leading-none">TIIS CONSORTIUM</span>
+            <span class="hidden sm:block text-[11px] text-slate-500 mt-1 leading-none">International Academic Network</span>
           </div>
         </button>
-
-        <!-- Navigation is available through the responsive off-canvas drawer. -->
-
-        <!-- Right CTA + Mobile Menu Toggle -->
         <div class="flex items-center gap-2.5">
-          <button
-            type="button"
-            onclick="navigateTo('membership', 'membership-form')"
-            class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-royal hover:bg-royal-dark text-white font-heading font-semibold text-xs sm:text-sm transition-colors"
-          >
-            Become a Member
-          </button>
-
-          <button
-            type="button"
-            id="mobile-toggle"
-            onclick="toggleMobileMenu()"
-            class="p-2 rounded-lg border border-slate-200 text-navy hover:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-royal"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-          >
-            <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+          <button type="button" onclick="navigateTo('membership', 'membership-form')" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-royal hover:bg-royal-dark text-white font-heading font-semibold text-xs sm:text-sm transition-colors">Become a Member</button>
+          <button type="button" id="mobile-toggle" onclick="toggleMobileMenu()" class="p-2 rounded-lg border border-slate-200 text-navy hover:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-royal" aria-label="Open navigation menu" aria-expanded="false">
+            <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
         </div>
       </div>
     </div>
-
-    <!-- Responsive off-canvas navigation drawer -->
     <div id="menu-backdrop" class="menu-backdrop" hidden></div>
     <aside id="mobile-menu" class="offcanvas-menu" hidden role="dialog" aria-modal="true" aria-label="Main navigation" aria-hidden="true" inert>
       <div class="offcanvas-header">
-        <div>
-          <p class="offcanvas-eyebrow">TIIS CONSORTIUM</p>
-          <h2 class="offcanvas-title">Explore the network</h2>
-        </div>
-        <button type="button" id="menu-close" class="menu-close" onclick="closeMobileMenu()" aria-label="Close navigation menu">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-        </button>
+        <div><p class="offcanvas-eyebrow">TIIS CONSORTIUM</p><h2 class="offcanvas-title">Explore the network</h2></div>
+        <button type="button" id="menu-close" class="menu-close" onclick="closeMobileMenu()" aria-label="Close navigation menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
       <nav class="offcanvas-nav" aria-label="Primary navigation">
         <button type="button" data-mnav="home" onclick="navigateTo('home')">Home <span>01</span></button>
@@ -107,100 +77,26 @@
         <button type="button" data-mnav="news" onclick="navigateTo('news')">News &amp; Stories <span>07</span></button>
         <button type="button" data-mnav="contact" onclick="navigateTo('contact')">Contact <span>08</span></button>
       </nav>
-      <div class="offcanvas-footer">
-        <p>Connecting Institutions. Advancing Computing. Shaping the Future.</p>
-        <button type="button" onclick="navigateTo('membership', 'membership-form')" class="offcanvas-cta">Become a Member <span aria-hidden="true">→</span></button>
-      </div>
+      <div class="offcanvas-footer"><p>Connecting Institutions. Advancing Computing. Shaping the Future.</p><button type="button" onclick="navigateTo('membership', 'membership-form')" class="offcanvas-cta">Become a Member <span aria-hidden="true">→</span></button></div>
     </aside>
   </header>
-
-  <!-- ===================================================================== -->
-  <!-- MAIN CONTENT VIEWS (8 PAGES)                                          -->
-  <!-- ===================================================================== -->
   <main id="page-container" class="flex-grow" aria-live="polite"></main>
-
-  <!-- ===================================================================== -->
-  <!-- CLEAN ARTICLE READER MODAL                                            -->
-  <!-- ===================================================================== -->
-  <div
-    id="news-modal"
-    class="hidden fixed inset-0 z-50 bg-navy/70 flex items-center justify-center p-4"
-    onclick="closeNewsModal()"
-    role="dialog"
-    aria-modal="true"
-  >
+  <div id="news-modal" class="hidden fixed inset-0 z-50 bg-navy/70 flex items-center justify-center p-4" onclick="closeNewsModal()" role="dialog" aria-modal="true">
     <div class="bg-white rounded-lg border border-slate-200 max-w-xl w-full overflow-hidden" onclick="event.stopPropagation()">
-      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between gap-4">
-        <span id="modal-cat" class="text-xs font-heading font-bold uppercase tracking-wider text-teal"></span>
-        <button
-          type="button"
-          onclick="closeNewsModal()"
-          class="text-slate-500 hover:text-navy text-sm font-heading font-semibold"
-        >
-          Close &times;
-        </button>
-      </div>
-      <div class="p-6 space-y-4">
-        <h2 id="modal-title" class="text-xl font-heading font-bold text-navy leading-snug"></h2>
-        <div id="modal-body" class="text-sm text-slate-600 leading-relaxed space-y-3"></div>
-      </div>
+      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between gap-4"><span id="modal-cat" class="text-xs font-heading font-bold uppercase tracking-wider text-teal"></span><button type="button" onclick="closeNewsModal()" class="text-slate-500 hover:text-navy text-sm font-heading font-semibold">Close &times;</button></div>
+      <div class="p-6 space-y-4"><h2 id="modal-title" class="text-xl font-heading font-bold text-navy leading-snug"></h2><div id="modal-body" class="text-sm text-slate-600 leading-relaxed space-y-3"></div></div>
     </div>
   </div>
-
-  <!-- ===================================================================== -->
-  <!-- MINIMAL 3-COLUMN FOOTER (#102A4C)                                     -->
-  <!-- ===================================================================== -->
   <footer class="bg-navy text-white border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid md:grid-cols-12 gap-8 pb-8 border-b border-white/15">
-        <!-- Column 1: Brand & Tagline -->
-        <div class="md:col-span-5 space-y-2.5">
-          <div class="font-heading font-bold text-base tracking-tight text-white">
-            TIIS CONSORTIUM
-          </div>
-          <p class="text-xs text-slate-300">
-            Technology and Information Institutions Consortium
-          </p>
-          <p class="text-xs font-heading font-semibold text-teal">
-            Connecting Institutions. Advancing Computing. Shaping the Future.
-          </p>
-        </div>
-
-        <!-- Column 2: Quick Links (All 8 Pages) -->
-        <div class="md:col-span-4 space-y-2.5">
-          <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-300">Quick Links</div>
-          <div class="grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-slate-300">
-            <button type="button" onclick="navigateTo('home')" class="text-left hover:text-teal">Home</button>
-            <button type="button" onclick="navigateTo('events')" class="text-left hover:text-teal">Events</button>
-            <button type="button" onclick="navigateTo('about')" class="text-left hover:text-teal">About</button>
-            <button type="button" onclick="navigateTo('institutions')" class="text-left hover:text-teal">Members</button>
-            <button type="button" onclick="navigateTo('membership')" class="text-left hover:text-teal">Membership</button>
-            <button type="button" onclick="navigateTo('news')" class="text-left hover:text-teal">News</button>
-            <button type="button" onclick="navigateTo('activities')" class="text-left hover:text-teal">Activities</button>
-            <button type="button" onclick="navigateTo('contact')" class="text-left hover:text-teal">Contact</button>
-          </div>
-        </div>
-
-        <!-- Column 3: Contact & Copyright -->
-        <div class="md:col-span-3 space-y-2 text-xs text-slate-300">
-          <div class="font-heading font-bold uppercase tracking-wider text-slate-300">Contact</div>
-          <p>
-            <a href="mailto:info@tiis-consortium.org" class="hover:text-teal">info@tiis-consortium.org</a>
-          </p>
-          <p>www.tiis-consortium.org</p>
-        </div>
+        <div class="md:col-span-5 space-y-2.5"><div class="font-heading font-bold text-base tracking-tight text-white">TIIS CONSORTIUM</div><p class="text-xs text-slate-300">Technology and Information Institutions Consortium</p><p class="text-xs font-heading font-semibold text-teal">Connecting Institutions. Advancing Computing. Shaping the Future.</p></div>
+        <div class="md:col-span-4 space-y-2.5"><div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-300">Quick Links</div><div class="grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-slate-300"><button type="button" onclick="navigateTo('home')" class="text-left hover:text-teal">Home</button><button type="button" onclick="navigateTo('events')" class="text-left hover:text-teal">Events</button><button type="button" onclick="navigateTo('about')" class="text-left hover:text-teal">About</button><button type="button" onclick="navigateTo('institutions')" class="text-left hover:text-teal">Members</button><button type="button" onclick="navigateTo('membership')" class="text-left hover:text-teal">Membership</button><button type="button" onclick="navigateTo('news')" class="text-left hover:text-teal">News</button><button type="button" onclick="navigateTo('activities')" class="text-left hover:text-teal">Activities</button><button type="button" onclick="navigateTo('contact')" class="text-left hover:text-teal">Contact</button></div></div>
+        <div class="md:col-span-3 space-y-2 text-xs text-slate-300"><div class="font-heading font-bold uppercase tracking-wider text-slate-300">Contact</div><p><a href="mailto:info@tiis-consortium.org" class="hover:text-teal">info@tiis-consortium.org</a></p><p>www.tiis-consortium.org</p></div>
       </div>
-
-      <div class="pt-6 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p>&copy; 2027 TIIS Consortium &middot; Proposed Academic Consortium Initiative</p>
-        <p>All Rights Reserved.</p>
-      </div>
+      <div class="pt-6 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-2"><p>&copy; 2027 TIIS Consortium &middot; Proposed Academic Consortium Initiative</p><p>All Rights Reserved.</p></div>
     </div>
   </footer>
-
-  <!-- ===================================================================== -->
-  <!-- APPLICATION SCRIPT                                                    -->
-  <!-- ===================================================================== -->
   <script type="module" src="./assets/js/app.js"></script>
 </body>
 </html>
