@@ -1,6 +1,6 @@
-# TIIS Consortium Website
+# Transparent Intelligent Infrastructures and Systems (TIIS) Consortium Website
 
-The TIIS Consortium website is a modular, data-driven static website. It can be hosted on GitHub Pages or any static web host and does not require a server-side runtime or build step.
+The Transparent Intelligent Infrastructures and Systems (TIIS) Consortium website is a modular, data-driven static website. It can be hosted on GitHub Pages or any static web host and does not require a server-side runtime or build step.
 
 ## Project structure
 
