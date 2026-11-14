@@ -4,7 +4,7 @@
     "title": "Introducing the TIIS Consortium Founding Initiative",
     "category": "Consortium Announcements",
     "dateLabel": "Founding Initiative",
-    "excerpt": "An introduction to the vision of a connected international network for computing and information technology institutions.",
+    "excerpt": "An introduction to an international academic network connecting institutions working across intelligent infrastructures, information systems, computing, and related disciplines.",
     "coverImage": "./assets/images/placeholders/tiis-event-placeholder.svg",
     "imageAlt": "Abstract illustration representing international academic collaboration",
     "featured": true,
@@ -288,7 +288,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The planned partnership continues the conference series' emphasis on academic exchange and institutional cooperation in computing and information technology."
+        "text": "The planned partnership continues the conference series' emphasis on academic exchange and institutional cooperation across intelligent infrastructures, information systems, computing, and related disciplines."
       },
       {
         "type": "image",
