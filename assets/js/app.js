@@ -252,7 +252,11 @@ function selectNetworkInstitution(id) {
   if(window.tiisNetworkMarkers?.[id])window.tiisNetworkMarkers[id].openPopup();
 }
 function initializeNetworkMap(){
-  const el=document.getElementById('tiis-network-map'); if(!el||!window.L||window.tiisNetworkMap)return;
+  const el=document.getElementById('tiis-network-map'); if(!el||window.tiisNetworkMap)return;
+  const dir=document.getElementById('network-directory');
+  if(dir)dir.innerHTML=institutions.map((item)=>`<button type="button" data-institution-id="${escapeHtml(item.id)}" onclick="selectNetworkInstitution('${escapeHtml(item.id)}')"><span>${escapeHtml(item.name)}</span><small>${escapeHtml(item.country)}</small></button>`).join('');
+  const count=document.getElementById('network-count'); if(count)count.textContent=`(${institutions.length})`;
+  if(!window.L){el.innerHTML='<p class="p-6 text-sm text-slate-600">The interactive map is temporarily unavailable. You can still select an institution from the directory.</p>';return;}
   const map=L.map(el,{scrollWheelZoom:false,worldCopyJump:true}).setView([22,112],2.7);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'}).addTo(map);
   const markers={};
@@ -263,9 +267,6 @@ function initializeNetworkMap(){
     marker.on('click',()=>selectNetworkInstitution(item.id)); markers[item.id]=marker;
   });
   window.tiisNetworkMap=map; window.tiisNetworkMarkers=markers;
-  const dir=document.getElementById('network-directory');
-  if(dir)dir.innerHTML=institutions.map((item)=>`<button type="button" data-institution-id="${escapeHtml(item.id)}" onclick="selectNetworkInstitution('${escapeHtml(item.id)}')"><span>${escapeHtml(item.name)}</span><small>${escapeHtml(item.country)}</small></button>`).join('');
-  const count=document.getElementById('network-count'); if(count)count.textContent=`(${institutions.length})`;
   setTimeout(()=>map.invalidateSize(),100);
 }
 
@@ -284,7 +285,7 @@ function escapeHtml(value) {
 }
 
 renderStories();
-initializeNetworkMap();
+initializeNetworkMap();;
 Object.assign(window, {
   navigateTo, toggleMobileMenu, closeMobileMenu, filterNews, openArticle,
   openNewsModal, closeNewsModal, copyEmail, selectNetworkInstitution
@@ -318,7 +319,9 @@ function initializeRoute() {
   if (hash.startsWith('article/')) {
     openArticle(decodeURIComponent(hash.slice(8)));
   } else {
-    navigateTo(pages.includes(hash) ? hash : 'home');
+    const legacyRoutes = { membership: 'join', contact: 'join', activities: 'about', events: 'news', institutions: 'network' };
+    const route = legacyRoutes[hash] || hash;
+    navigateTo(pages.includes(route) ? route : 'home');
   }
 }
 
