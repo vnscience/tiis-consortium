@@ -27,6 +27,7 @@
       --font-body: "Inter", sans-serif;
     }
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="./assets/css/site.css" />
   <link rel="icon" type="image/svg+xml" href="./assets/images/tiis-mark.svg" />
 </head>
@@ -74,7 +75,7 @@
         <div class="flex items-center gap-2.5">
           <button
             type="button"
-            onclick="navigateTo('membership', 'membership-form')"
+            onclick="navigateTo('join', 'membership-form')"
             class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-royal hover:bg-royal-dark text-white font-heading font-semibold text-xs sm:text-sm transition-colors"
           >
             Become a Member
@@ -114,22 +115,19 @@
       <nav class="offcanvas-nav" aria-label="Primary navigation">
         <button type="button" data-mnav="home" onclick="navigateTo('home')">Home <span>01</span></button>
         <button type="button" data-mnav="about" onclick="navigateTo('about')">About <span>02</span></button>
-        <button type="button" data-mnav="membership" onclick="navigateTo('membership')">Membership <span>03</span></button>
-        <button type="button" data-mnav="activities" onclick="navigateTo('activities')">Activities <span>04</span></button>
-        <button type="button" data-mnav="events" onclick="navigateTo('events')">Events <span>05</span></button>
-        <button type="button" data-mnav="institutions" onclick="navigateTo('institutions')">Member Institutions <span>06</span></button>
-        <button type="button" data-mnav="news" onclick="navigateTo('news')">News &amp; Stories <span>07</span></button>
-        <button type="button" data-mnav="contact" onclick="navigateTo('contact')">Contact <span>08</span></button>
+        <button type="button" data-mnav="network" onclick="navigateTo('network')">Network <span>03</span></button>
+        <button type="button" data-mnav="news" onclick="navigateTo('news')">News &amp; Events <span>04</span></button>
+        <button type="button" data-mnav="join" onclick="navigateTo('join')">Join &amp; Contact <span>05</span></button>
       </nav>
       <div class="offcanvas-footer">
         <p>Connecting Institutions. Advancing Intelligent Systems. Shaping the Future.</p>
-        <button type="button" onclick="navigateTo('membership', 'membership-form')" class="offcanvas-cta">Become a Member <span aria-hidden="true">→</span></button>
+        <button type="button" onclick="navigateTo('join', 'membership-form')" class="offcanvas-cta">Become a Member <span aria-hidden="true">→</span></button>
       </div>
     </aside>
   </header>
 
   <!-- ===================================================================== -->
-  <!-- MAIN CONTENT VIEWS (8 PAGES)                                          -->
+  <!-- MAIN CONTENT VIEWS (5 PAGES)                                          -->
   <!-- ===================================================================== -->
   <main id="page-container" class="flex-grow" aria-live="polite"></main>
 
@@ -186,13 +184,10 @@
           <div class="text-xs font-heading font-bold uppercase tracking-wider text-slate-300">Quick Links</div>
           <div class="grid grid-cols-2 gap-y-2 gap-x-4 text-xs text-slate-300">
             <button type="button" onclick="navigateTo('home')" class="text-left hover:text-teal">Home</button>
-            <button type="button" onclick="navigateTo('events')" class="text-left hover:text-teal">Events</button>
             <button type="button" onclick="navigateTo('about')" class="text-left hover:text-teal">About</button>
-            <button type="button" onclick="navigateTo('institutions')" class="text-left hover:text-teal">Members</button>
-            <button type="button" onclick="navigateTo('membership')" class="text-left hover:text-teal">Membership</button>
-            <button type="button" onclick="navigateTo('news')" class="text-left hover:text-teal">News</button>
-            <button type="button" onclick="navigateTo('activities')" class="text-left hover:text-teal">Activities</button>
-            <button type="button" onclick="navigateTo('contact')" class="text-left hover:text-teal">Contact</button>
+            <button type="button" onclick="navigateTo('network')" class="text-left hover:text-teal">Network</button>
+            <button type="button" onclick="navigateTo('news')" class="text-left hover:text-teal">News &amp; Events</button>
+            <button type="button" onclick="navigateTo('join')" class="text-left hover:text-teal">Join &amp; Contact</button>
           </div>
         </div>
 
@@ -216,6 +211,7 @@
   <!-- ===================================================================== -->
   <!-- APPLICATION SCRIPT                                                    -->
   <!-- ===================================================================== -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="./assets/js/app.js"></script>
 </body>
 </html>
