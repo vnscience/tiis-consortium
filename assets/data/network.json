@@ -1,0 +1,142 @@
+[
+  {
+    "id": "ssru",
+    "name": "Suan Sunandha Rajabhat University",
+    "shortName": "SSRU",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "lat": 13.7768,
+    "lng": 100.5092,
+    "website": "https://ssru.ac.th/en/",
+    "description": "A public university in Bangkok offering programmes across education, science and technology, humanities, management, and other professional fields.",
+    "socials": [
+      {
+        "platform": "instagram",
+        "label": "Instagram",
+        "url": "https://www.instagram.com/ssru_official/"
+      },
+      {
+        "platform": "x",
+        "label": "X",
+        "url": "https://x.com/OfficialSsru"
+      }
+    ]
+  },
+  {
+    "id": "kasetsart",
+    "name": "Kasetsart University",
+    "shortName": "Kasetsart",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "lat": 13.84705,
+    "lng": 100.571942,
+    "website": "https://www.ku.ac.th/en/",
+    "description": "A major public research university in Thailand, with a broad academic portfolio and a strong foundation in research, science, technology, and innovation.",
+    "socials": [
+      {
+        "platform": "facebook",
+        "label": "Facebook",
+        "url": "https://www.facebook.com/KasetsartUniversity"
+      }
+    ]
+  },
+  {
+    "id": "hallym",
+    "name": "Hallym University",
+    "shortName": "Hallym",
+    "city": "Chuncheon",
+    "country": "South Korea",
+    "lat": 37.8861,
+    "lng": 127.7378,
+    "website": "https://www.hallym.ac.kr/sites/hallym/index.do",
+    "description": "A private university based in Chuncheon, Gangwon Province, with academic programmes and research spanning information science, engineering, health, social sciences, and the humanities.",
+    "socials": [
+      {
+        "platform": "social",
+        "label": "Official social channels",
+        "url": "https://www.hallym.ac.kr/sites/hallym/index.do"
+      }
+    ]
+  },
+  {
+    "id": "sejong",
+    "name": "Sejong University",
+    "shortName": "Sejong",
+    "city": "Seoul",
+    "country": "South Korea",
+    "lat": 37.5509,
+    "lng": 127.0738,
+    "website": "https://www.sejong.ac.kr/eng/index.do",
+    "description": "A private university in Seoul with programmes and research across engineering, computing, business, arts, and the sciences.",
+    "socials": []
+  },
+  {
+    "id": "chung-ang",
+    "name": "Chung-Ang University",
+    "shortName": "Chung-Ang",
+    "city": "Seoul",
+    "country": "South Korea",
+    "lat": 37.5051,
+    "lng": 126.9571,
+    "website": "https://neweng.cau.ac.kr/",
+    "description": "A comprehensive private university with its main Seoul campus in Heukseok-dong and a second campus in Anseong, covering disciplines including ICT engineering, software, business, medicine, and the arts.",
+    "socials": [
+      {
+        "platform": "social",
+        "label": "Official social channels",
+        "url": "https://neweng.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=20"
+      }
+    ]
+  },
+  {
+    "id": "hcmcou",
+    "name": "Ho Chi Minh City Open University",
+    "shortName": "HCMCOU",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "lat": 10.7769,
+    "lng": 106.6917,
+    "website": "https://ou.edu.vn/",
+    "description": "A public university in Ho Chi Minh City with a mission in open and continuing education, alongside undergraduate, postgraduate, research, and community engagement activities.",
+    "socials": [
+      {
+        "platform": "facebook",
+        "label": "Facebook",
+        "url": "https://www.facebook.com/TruongDaiHocMo"
+      },
+      {
+        "platform": "youtube",
+        "label": "YouTube",
+        "url": "https://www.youtube.com/@HoChiMinhCityOpenUniversity"
+      },
+      {
+        "platform": "instagram",
+        "label": "Instagram",
+        "url": "https://www.instagram.com/ou.edu.vn/"
+      },
+      {
+        "platform": "tiktok",
+        "label": "TikTok",
+        "url": "https://www.tiktok.com/@ou.edu.vn"
+      }
+    ]
+  },
+  {
+    "id": "victoria-wellington",
+    "name": "Te Herenga Waka—Victoria University of Wellington",
+    "shortName": "Victoria",
+    "city": "Wellington",
+    "country": "New Zealand",
+    "lat": -41.289,
+    "lng": 174.768,
+    "website": "https://www.wgtn.ac.nz/",
+    "description": "A public research university in Wellington, New Zealand, with teaching and research across humanities, social sciences, business, law, science, engineering, and creative disciplines.",
+    "socials": [
+      {
+        "platform": "social",
+        "label": "Official social media directory",
+        "url": "https://www.wgtn.ac.nz/about/our-story/news-events/social-media"
+      }
+    ]
+  }
+]
