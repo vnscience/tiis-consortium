@@ -17,28 +17,16 @@
       "label": "About"
     },
     {
-      "id": "membership",
-      "label": "Membership"
-    },
-    {
-      "id": "activities",
-      "label": "Activities"
-    },
-    {
-      "id": "events",
-      "label": "Events"
-    },
-    {
-      "id": "institutions",
-      "label": "Members"
+      "id": "network",
+      "label": "Network"
     },
     {
       "id": "news",
-      "label": "News"
+      "label": "News & Events"
     },
     {
-      "id": "contact",
-      "label": "Contact"
+      "id": "join",
+      "label": "Join & Contact"
     }
   ]
 }
