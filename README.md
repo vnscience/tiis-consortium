@@ -14,6 +14,7 @@ The Transparent Intelligent Infrastructures and Systems (TIIS) Consortium websit
     ├── data/
     │   ├── site.json
     │   ├── announcements.json
+    │   ├── network.json
     │   └── stories.json
     ├── images/
     │   └── placeholders/
@@ -24,24 +25,23 @@ The Transparent Intelligent Infrastructures and Systems (TIIS) Consortium websit
     └── pages/
         ├── home.html
         ├── about.html
-        ├── membership.html
-        ├── activities.html
-        ├── events.html
-        ├── institutions.html
+        ├── network.html
         ├── news.html
-        └── contact.html
+        └── join.html
 ```
 
 ## Architecture
 
 - `index.html`: application shell, shared header, footer, and page mount point.
-- `assets/pages/`: one HTML partial per website page.
-- `assets/css/site.css`: project-specific styles, story cards, article layouts, and page transitions.
+- `assets/pages/`: five focused page partials: Home, About, Network, News & Events, and Join & Contact.
+- `assets/css/site.css`: project-specific styles, story cards, article layouts, responsive network map, and page transitions.
 - `assets/js/tailwind.config.js`: Tailwind theme tokens and font configuration.
-- `assets/js/app.js`: page loading, navigation, mobile menu, story rendering, category filtering, and article routes.
+- `assets/js/app.js`: page loading, navigation, mobile menu, story rendering, category filtering, article routes, and interactive institution profiles.
 - `assets/data/site.json`: site metadata and navigation configuration.
 - `assets/data/announcements.json`: legacy announcement copy retained for reference.
 - `assets/data/stories.json`: editorial content source for news cards and full event articles.
+- `assets/data/network.json`: institution names, locations, short profiles, official websites, and verified social links for the interactive map.
+- `assets/pages/network.html` and Leaflet/OpenStreetMap: the interactive global map, with selectable university markers and profile links.
 - `assets/images/placeholders/`: reusable local placeholder artwork.
 
 ## Managing news and event stories
@@ -55,7 +55,7 @@ Supported article section types:
 - `image`: an image with alternative text and an optional caption.
 - `quote`: a highlighted quotation.
 
-Each story is automatically shown in the News & Stories feed. Stories in the Academic Events and International Collaboration categories may also appear in the Activities feed. Selecting a story opens its own shareable article route (for example, `#article/eidt-2026`).
+Each story is automatically shown in the News & Events feed. Selecting a story opens its own shareable article route (for example, `#article/eidt-2026`).
 
 ### Replacing placeholder images
 
@@ -89,4 +89,4 @@ Publish the repository root with `index.html` and the complete `assets/` directo
 
 ## Website forms
 
-The Membership Expression of Interest and General Inquiry pages embed their respective Google Forms directly in responsive, styled iframe containers. Form responses are managed in Google Forms; this website does not use a custom server-side form handler or Apps Script bridge.
+The Join & Contact page embeds the Membership Expression of Interest Google Form and links to the General Inquiry Google Form. Form responses are managed in Google Forms; this website does not use a custom server-side form handler or Apps Script bridge.
