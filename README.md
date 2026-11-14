@@ -38,7 +38,7 @@ The TIIS Consortium website is a modular, data-driven static website. It can be 
 - `assets/pages/`: one HTML partial per website page.
 - `assets/css/site.css`: project-specific styles, story cards, article layouts, and page transitions.
 - `assets/js/tailwind.config.js`: Tailwind theme tokens and font configuration.
-- `assets/js/app.js`: page loading, navigation, mobile menu, story rendering, category filtering, article routes, and form interactions.
+- `assets/js/app.js`: page loading, navigation, mobile menu, story rendering, category filtering, and article routes.
 - `assets/data/site.json`: site metadata and navigation configuration.
 - `assets/data/announcements.json`: legacy announcement copy retained for reference.
 - `assets/data/stories.json`: editorial content source for news cards and full event articles.
@@ -87,14 +87,6 @@ Open `http://localhost:8000` in your browser.
 
 Publish the repository root with `index.html` and the complete `assets/` directory. The site does not require a build step or server-side runtime.
 
-## Website forms and email delivery
+## Website forms
 
-The Membership Expression of Interest and Contact Inquiry forms validate required fields in the browser and submit through the FormSubmit AJAX endpoint to the TIIS Secretariat mailbox (`bay.nv@ou.edu.vn`). The forms include email validation, length limits, a honeypot field, and user-visible error handling. Successful confirmation is shown only after the provider accepts the submission.
-
-**One-time activation required:** the first real submission triggers an activation email from FormSubmit to `bay.nv@ou.edu.vn`. Open that email and click its activation link. Until activation is completed, FormSubmit will not deliver submissions. Test both forms after activation.
-
-FormSubmit is a third-party service. Its documentation states that submissions are retained for 30 days. Do not collect sensitive personal information through these forms. Review the provider's current privacy and service terms before production use.
-
-Provider documentation:
-- [FormSubmit setup and controls](https://formsubmit.co/documentation)
-- [FormSubmit AJAX submission](https://formsubmit.co/ajax-documentation)
+The Membership Expression of Interest and General Inquiry pages embed their respective Google Forms directly in responsive, styled iframe containers. Form responses are managed in Google Forms; this website does not use a custom server-side form handler or Apps Script bridge.
