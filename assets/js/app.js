@@ -206,8 +206,8 @@ function openArticle(slug) {
         <div class="article-content">
           ${(story.sections || []).map(renderArticleBlock).join('')}
           <div class="article-endnote">
-            <strong>TIIS Consortium</strong>
-            <p>Connecting Institutions. Advancing Computing. Shaping the Future.</p>
+            <strong>Transparent Intelligent Infrastructures and Systems (TIIS) Consortium</strong>
+            <p>Connecting Institutions. Advancing Intelligent Systems. Shaping the Future.</p>
           </div>
           <button type="button" class="article-back-bottom" onclick="navigateTo('news')">← Return to all stories</button>
         </div>
