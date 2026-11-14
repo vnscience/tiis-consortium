@@ -3,13 +3,17 @@ const siteConfig = await fetch('./assets/data/site.json').then((response) => {
   return response.json();
 });
 const pages = siteConfig.pages.map((page) => page.id);
-const [announcements, stories] = await Promise.all([
+const [announcements, stories, institutions] = await Promise.all([
   fetch('./assets/data/announcements.json').then((response) => {
     if (!response.ok) throw new Error('Unable to load announcements.');
     return response.json();
   }),
   fetch('./assets/data/stories.json').then((response) => {
     if (!response.ok) throw new Error('Unable to load stories.');
+    return response.json();
+  }),
+  fetch('./assets/data/network.json').then((response) => {
+    if (!response.ok) throw new Error('Unable to load network directory.');
     return response.json();
   })
 ]);
@@ -47,6 +51,7 @@ function navigateTo(pageId, targetId = null) {
     ? `#article/${window.currentStorySlug}`
     : `#${pageId}`;
   try { history.replaceState(null, '', hash); } catch (error) {}
+  if (pageId === 'network' && window.tiisNetworkMap) setTimeout(() => window.tiisNetworkMap.invalidateSize(), 80);
   if (targetId) {
     setTimeout(() => {
       const targetEl = document.getElementById(targetId);
@@ -234,6 +239,36 @@ function closeNewsModal() {
   if (modal) modal.classList.add('hidden');
 }
 
+
+const networkIcon = (platform) => ({ website:'↗',facebook:'f',instagram:'◎',youtube:'▶',x:'𝕏',linkedin:'in',tiktok:'♪',social:'◎' }[platform] || '↗');
+function selectNetworkInstitution(id) {
+  const item=institutions.find((entry)=>entry.id===id); if(!item)return;
+  const detail=document.getElementById('network-detail');
+  if(detail){
+    const links=[{platform:'website',label:'Official website',url:item.website},...(item.socials||[])];
+    detail.innerHTML=`<p class="network-kicker">${escapeHtml(item.city)}, ${escapeHtml(item.country)}</p><h2>${escapeHtml(item.name)}</h2><p class="network-detail-summary">${escapeHtml(item.description)}</p><div class="network-socials">${links.map((link)=>`<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(link.label)}" title="${escapeHtml(link.label)}" class="network-social-link network-social-${escapeHtml(link.platform)}"><span aria-hidden="true">${networkIcon(link.platform)}</span><small>${escapeHtml(link.label)}</small></a>`).join('')}</div><a class="network-map-link" href="https://www.openstreetmap.org/?mlat=${item.lat}&mlon=${item.lng}#map=15/${item.lat}/${item.lng}" target="_blank" rel="noopener noreferrer">View campus location ↗</a>`;
+  }
+  document.querySelectorAll('.network-directory button').forEach((b)=>b.classList.toggle('is-selected',b.dataset.institutionId===id));
+  if(window.tiisNetworkMarkers?.[id])window.tiisNetworkMarkers[id].openPopup();
+}
+function initializeNetworkMap(){
+  const el=document.getElementById('tiis-network-map'); if(!el||!window.L||window.tiisNetworkMap)return;
+  const map=L.map(el,{scrollWheelZoom:false,worldCopyJump:true}).setView([22,112],2.7);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'}).addTo(map);
+  const markers={};
+  institutions.forEach((item)=>{
+    const icon=L.divIcon({className:'tiis-marker-shell',html:`<span class="tiis-map-marker"><i></i><b>${escapeHtml(item.shortName||item.name)}</b></span>`,iconSize:[150,34],iconAnchor:[12,17]});
+    const marker=L.marker([item.lat,item.lng],{icon,title:item.name,alt:item.name}).addTo(map);
+    marker.bindPopup(`<strong>${escapeHtml(item.name)}</strong><br>${escapeHtml(item.city)}, ${escapeHtml(item.country)}<br><button type="button" class="network-popup-button" onclick="selectNetworkInstitution('${escapeHtml(item.id)}')">View profile</button>`);
+    marker.on('click',()=>selectNetworkInstitution(item.id)); markers[item.id]=marker;
+  });
+  window.tiisNetworkMap=map; window.tiisNetworkMarkers=markers;
+  const dir=document.getElementById('network-directory');
+  if(dir)dir.innerHTML=institutions.map((item)=>`<button type="button" data-institution-id="${escapeHtml(item.id)}" onclick="selectNetworkInstitution('${escapeHtml(item.id)}')"><span>${escapeHtml(item.name)}</span><small>${escapeHtml(item.country)}</small></button>`).join('');
+  const count=document.getElementById('network-count'); if(count)count.textContent=`(${institutions.length})`;
+  setTimeout(()=>map.invalidateSize(),100);
+}
+
 function copyEmail() {
   const input = document.createElement('input');
   input.value = 'info@tiis-consortium.org';
@@ -249,9 +284,10 @@ function escapeHtml(value) {
 }
 
 renderStories();
+initializeNetworkMap();
 Object.assign(window, {
   navigateTo, toggleMobileMenu, closeMobileMenu, filterNews, openArticle,
-  openNewsModal, closeNewsModal, copyEmail
+  openNewsModal, closeNewsModal, copyEmail, selectNetworkInstitution
 });
 document.getElementById('menu-backdrop')?.addEventListener('click', closeMobileMenu);
 document.addEventListener('keydown', (event) => {
